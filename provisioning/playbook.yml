@@ -1,0 +1,10 @@
+---
+- hosts: all
+  sudo: true
+  roles:
+    - role: docker.ubuntu
+      docker_opts: >
+        -H unix://
+        -H tcp://0.0.0.0:2375
+        --log-level=debug
+      pip_version_docker_compose: 1.2.0
