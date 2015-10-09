@@ -5,11 +5,11 @@
 Initialize git submodules
 
 ```bash
-  $ git submodule init && git submodule update
+  $ git submodule update --init
 ```
 
 Start virtual machine
 
 ```bash
-  $ vagrant up
+  $ ./dockup.sh
 ```
