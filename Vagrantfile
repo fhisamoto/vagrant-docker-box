@@ -28,6 +28,13 @@ Vagrant.configure("2") do |config|
   # fake-sns
   config.vm.network "forwarded_port", guest: 9292, host: 9292
 
+  # redis
+  config.vm.network "forwarded_port", guest: 6379, host: 6379
+
+  # host user uid and gid.
+  config.nfs.map_uid = 501
+  config.nfs.map_gid = 20
+
   config.vm.synced_folder "/Users", "/Users", type: "nfs"
   config.vm.synced_folder "#{ENV['HOME']}/.m2", "/home/vagrant/.m2", type: "nfs"
   config.vm.synced_folder "#{ENV['HOME']}/.ivy2", "/home/vagrant/.ivy2", type: "nfs"
